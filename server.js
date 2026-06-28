@@ -3,6 +3,10 @@ const axios = require('axios');
 const app = express();
 app.use(express.json());
 
+app.get('/', (req, res) => {
+  res.send('🎟️ Bitcoin Raffle Backend is Wide Awake and Running!');
+});
+
 // OpenNode Testnet Configuration
 const OPENNODE_API_KEY = '8571a2aa-044d-49ba-a798-bf0c0db7badb';
 const OPENNODE_API_URL = 'https://opennode.com';
