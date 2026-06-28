@@ -6,7 +6,12 @@ app.use(express.json());
 app.get('/', (req, res) => {
   res.send('🎟️ Bitcoin Raffle Backend is Wide Awake and Running!');
 });
-
+app.get('/api/test-draw', (req, res) => {
+  processTicketPurchase(25, 'player_alpha@test.com');
+  processTicketPurchase(25, 'player_beta@test.com');
+  processTicketPurchase(25, 'player_gamma@test.com');
+  res.send('🎰 Test entries sent! Check your Render logs for the winner.');
+})
 // OpenNode Testnet Configuration
 const OPENNODE_API_KEY = '8571a2aa-044d-49ba-a798-bf0c0db7badb';
 const OPENNODE_API_URL = 'https://opennode.com';
