@@ -6,6 +6,18 @@ app.use(express.json());
 app.get('/', (req, res) => {
   res.send('🎟️ Bitcoin Raffle Backend is Wide Awake and Running!');
 });
+app.get('/api/test-draw', (req, res) => {
+  const pool = ['player_alpha@test.com', 'player_beta@test.com', 'player_gamma@test.com'];
+  const randomIndex = Math.floor(Math.random() * pool.length);
+  const winner = pool[randomIndex];
+  
+  // This sends the winner directly to your browser window so you see it instantly!
+  res.send(`
+    <h1>🎰 Raffle Engine Test Successful!</h1>
+    <p><strong>🏆 WINNER DETERMINED:</strong> ${winner}</p>
+    <p><strong>Prize Allocated:</strong> $50 USD in Bitcoin</p>
+  `);
+});
 
 // Fixed Test Route to output the winner right to your web browser window
 app.get('/api/test-draw', (req, res) => {
