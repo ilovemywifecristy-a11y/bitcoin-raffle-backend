@@ -119,4 +119,9 @@ function executeDrawing(tier, drawType, entrantsPool, prizeAmountUSD) {
 
 // Start Server
 const PORT = process.env.PORT || 10000;
-app.listen(PORT, () => console.log(`🚀 Raffle Backend running on port ${PORT}`));
+// Start Server - Let Render choose the port automatically
+const PORT = process.env.PORT || 10000;
+app.listen(PORT, "0.0.0.0", () => {
+  console.log(`🚀 Raffle Backend running on port ${PORT}`);
+});
+
