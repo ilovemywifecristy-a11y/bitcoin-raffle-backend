@@ -1,4 +1,4 @@
-const OPENNODE_API_KEY = process.env.OPENNODE_API_KEY;
+
 
 const express = require('express');
 
